@@ -5,12 +5,30 @@
 * {
     max-width: 100%;
     margin: 0px auto;
+    font-family: Work Sans;
+    caret-color: transparent;
+}
+
+.colored-text {
+    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.primary-btn {
+    padding: 1.4rem 2.5rem;
+    border: none;
+    color: white;
+    background: #FF42A5;
+    border-radius: 3rem;
+
 }
 
 
 nav {
     display: flex;
-    max-width: auto;
+    /* max-width: auto; */
     height: 8.125rem;
     margin: 0px auto;
     justify-content: space-between;
@@ -24,12 +42,16 @@ nav {
     align-items: center;
 }
 
-.nav-left h1 {
+.nav-left h1,
+.banner-description h1 {
     font-family: Work Sans;
-    font-size: 2.8rem;
+    font-size: 2.8em;
     font-style: normal;
     font-weight: 700;
+    color: #0B0223;
 }
+
+
 
 .nav-left span {
     color: #FF42A5;
@@ -40,12 +62,14 @@ nav {
     align-items: center;
 }
 
+
 .nav-right .icon {
     width: 262px;
     height: 56px;
     border-radius: 8px;
     background: rgba(11, 2, 35, 0.10);
     padding: 0px;
+
 }
 
 
@@ -62,7 +86,54 @@ nav {
     font-size: 1.125rem;
 }
 
+.banner-cotainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: url(/images/banner-background.png);
+    background-position-x: -8rem;
+    background-repeat: no-repeat;
+}
 
+
+.banner-cotainer img {
+    width: 70%;
+    margin-right: 10rem;
+
+}
+
+.banner-description {
+    width: 50%;
+    margin-left: 10rem;
+
+
+}
+
+.goat {
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+}
+
+.banner-description p {
+    margin-top: 1rem;
+
+}
+
+.banner-description p i {
+    margin-right: 0.5rem;
+}
+
+.btn-group {
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 2.1rem;
+}
+
+.btn-blue {
+    background: #4EC5F7;
+}
 
 
 
@@ -73,11 +144,18 @@ nav {
 
     nav {
         flex-direction: column;
-        justify-content: center;
-        margin-top: 3rem;
+
+        /* margin-top: 3rem; */
+        padding: 3rem;
+        ;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        align-content: center;
     }
 
-    .nav-right {
+    .nav-right,
+    .banner-cotainer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -88,11 +166,30 @@ nav {
 
     .nav-right .menu {
         flex-direction: column;
+
     }
 
 
+    .banner-cotainer img {
+        width: 100%;
+        margin-right: 0rem;
 
 
+    }
+
+    .banner-description {
+        margin-left: 0rem;
+        padding: 30px;
+    }
+
+    .primary-btn {
+        padding: 0.5rem 3rem;
+        border: none;
+        color: white;
+
+        border-radius: 2rem;
+
+    }
 
 }
 
@@ -101,7 +198,23 @@ nav {
 @media screen and (min-width:576px) and (max-width : 992px) {
     nav {
         flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .banner-cotainer img {
+        width: 80%;
+        margin-left: 10rem;
+    }
+
+    .banner-description {
+        margin-top: 12rem;
+    }
+
+    .banner-cotainer {
+
         justify-content: center;
-        margin-top: 3rem;
+        flex-direction: column-reverse;
+        background-position-y: 46rem;
     }
 }
