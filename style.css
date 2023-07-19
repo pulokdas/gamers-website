@@ -3,7 +3,7 @@
 /* Primay styles */
 
 * {
-    max-width: 100%;
+    max-width: 100vw;
     margin: 0px auto;
     font-family: Work Sans;
     caret-color: transparent;
@@ -14,6 +14,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .primary-btn {
@@ -22,6 +24,7 @@
     color: white;
     background: #FF42A5;
     border-radius: 3rem;
+    font-size: 1.1rem;
 
 }
 
@@ -32,7 +35,7 @@ nav {
     height: 8.125rem;
     margin: 0px auto;
     justify-content: space-between;
-
+    margin-right: 0;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
 
 }
@@ -43,7 +46,8 @@ nav {
 }
 
 .nav-left h1,
-.banner-description h1 {
+.banner-description h1,
+.mid-description h1 {
     font-family: Work Sans;
     font-size: 2.8em;
     font-style: normal;
@@ -136,6 +140,165 @@ nav {
 }
 
 
+/* Gamers section */
+
+.gamers-section {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background: linear-gradient(90deg, rgba(255, 66, 165, 0.03) 0%, rgba(255, 66, 165, 0.03) 100%);
+}
+
+.gamers-img img {
+    width: 100%;
+    padding-left: 8rem;
+}
+
+.gamers-description {
+    width: 70%;
+    padding-left: 15rem;
+    padding-right: 10rem;
+    text-align: right;
+
+}
+
+.gamers-description h1,
+.gamers-description p,
+.gamers-description button {
+
+    margin-top: 2rem;
+}
+
+
+.online-game-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+
+    width: 80%;
+
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    background-image: url('/images/circle-play-solid.svg');
+    /* Replace 'play-icon.png' with your own play icon image */
+    background-size: cover;
+    width: 50px;
+    /* Adjust the width and height according to your icon's dimensions */
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card .Watch-now {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .Watch-now {
+    opacity: 1;
+}
+
+
+.card img {
+    width: 70%;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+
+}
+
+.card p {
+    width: 70%;
+    text-align: left;
+}
+
+.online-games>h1,
+p {
+    text-align: center;
+
+}
+
+.online-games>h1 {
+    margin-top: 2rem;
+    font-size: 3rem;
+
+}
+
+.mid-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mid-images {
+    width: 50%;
+    margin-right: 2rem;
+}
+
+
+
+.side-img {
+    width: 30%;
+    position: relative;
+    right: 26rem;
+    top: 2.5rem;
+
+}
+
+.mid-images .main-img {
+    width: 70%;
+}
+
+.mid-description {
+    text-align: right;
+    padding: 10rem;
+    margin-right: 10rem;
+}
+
+.mid-description p {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+.mid-section2 {
+    flex-direction: row-reverse;
+}
+
+
+
+
+
+
+
+
 
 
 /* responsive */
@@ -164,42 +327,72 @@ nav {
 
 
 
-    .nav-right .menu {
-        flex-direction: column;
+    .nav-right,
+    .menu,
+    {
+    flex-direction: column;
 
-    }
-
-
-    .banner-cotainer img {
-        width: 100%;
-        margin-right: 0rem;
+}
 
 
-    }
+.banner-cotainer img {
+    width: 100%;
+    margin-right: 0rem;
 
-    .banner-description {
-        margin-left: 0rem;
-        padding: 30px;
-    }
 
-    .primary-btn {
-        padding: 0.5rem 3rem;
-        border: none;
-        color: white;
+}
 
-        border-radius: 2rem;
+.banner-description {
+    margin-left: 0rem;
+    padding: 30px;
+}
 
-    }
+.gamers-section {
+    flex-direction: column-reverse;
+}
+
+.gamers-description {
+    width: 100%;
+
+    padding: 0;
+    text-align: center;
+
+}
+
+.gamers-img img {
+    width: 100%;
+    padding: 0;
+    padding-top: 2rem;
+}
+
+.primary-btn {
+    padding: 0.5rem 3rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 2rem;
+
+}
 
 }
 
 /* tablet */
 
-@media screen and (min-width:576px) and (max-width : 992px) {
-    nav {
-        flex-direction: column;
-        width: 100%;
+@media (min-width: 576px) and (max-width: 992px) {
+    body {
+        max-width: 992px;
         margin: 0 auto;
+    }
+
+    nav {
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 5rem;
+        padding-right: 5rem;
+
+
     }
 
     .banner-cotainer img {
@@ -214,7 +407,32 @@ nav {
     .banner-cotainer {
 
         justify-content: center;
+        align-items: center;
         flex-direction: column-reverse;
         background-position-y: 46rem;
+    }
+
+    .gamers-section {
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        width: 992px;
+        height: 100vw;
+    }
+
+    .gamers-description {
+        width: 992px;
+
+        padding: 0;
+        text-align: center;
+
+
+
+    }
+
+    .gamers-img img {
+        width: 100%;
+        padding: 0;
+        padding-top: 2rem;
     }
 }
